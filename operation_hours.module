@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * @file
+ * Contains operation_hours.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function operation_hours_theme() {
+  return [
+    'operation_hours_season_table' => [
+      'render element' => 'element',
+    ],
+    'operation_hours_exception_table' => [
+      'render element' => 'element',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for operation hours season table templates.
+ */
+function template_preprocess_operation_hours_season_table(&$variables) {
+  $element = $variables['element'];
+
+  $days = [
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+    'sunday',
+  ];
+  $fields = [
+    'name',
+    'from',
+    'to',
+    'closed',
+  ];
+
+  $rows = [];
+  foreach ($days as $day) {
+    $row = [];
+    foreach ($fields as $field) {
+      $data = [
+        'data' => \Drupal::service('renderer')->render($element['days'][$day][$field]),
+      ];
+
+      $row[] = $data;
+    }
+
+    $rows[] = $row;
+  }
+
+  $variables['table'] = [
+    '#type' => 'table',
+    '#header' => [t('Day'), t('From'), t('To'), t('Closed')],
+    '#rows' => $rows,
+  ];
+
+  $variables['element'] = $element;
+}
+
+/**
+ * Prepares variables for operation hours exception table templates.
+ */
+function template_preprocess_operation_hours_exception_table(&$variables) {
+  $renderer = \Drupal::service('renderer');
+
+  $element = $variables['element'];
+  $key = $element['#exception_key'];
+
+  $row = [];
+  $row[] = ['data' => $renderer->render($element['status'])];
+  $row[] = ['data' => $renderer->render($element['day'])];
+  $row[] = ['data' => $renderer->render($element['from'])];
+  $row[] = ['data' => $renderer->render($element['to'])];
+  $row[] = ['data' => $renderer->render($element['remove_' . $key])];
+
+  $variables['table'] = [
+    '#type' => 'table',
+    '#caption' => 'Summer',
+    '#header' => [],
+    '#rows' => [$row],
+    '#attributes' => [
+      'class' => ['operation-hours-settings-exception-table'],
+    ],
+  ];
+
+  $variables['element'] = $element;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function operation_hours_cron() {
+  \Drupal::service('operation_hours.helper')->checkOperationHoursTag();
+}

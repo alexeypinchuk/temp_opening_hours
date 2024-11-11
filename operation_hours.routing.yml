@@ -1,0 +1,7 @@
+operation_hours.hours.settings:
+  path: '/admin/service-hours/settings'
+  defaults:
+    _title: 'Operation hours'
+    _form: 'Drupal\operation_hours\Form\OperationHoursSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

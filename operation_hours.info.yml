@@ -1,0 +1,7 @@
+name: Operation hours
+type: module
+description: 'The module allows configuring operating hours.'
+package: Operation hours
+core_version_requirement: ^9 || ^10
+configure: operation_hours.settings
+

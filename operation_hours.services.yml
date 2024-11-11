@@ -1,0 +1,4 @@
+services:
+  operation_hours.helper:
+    class: Drupal\operation_hours\Service\OperationHoursHelper
+    arguments: ['@config.factory', '@state']

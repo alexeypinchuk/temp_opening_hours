@@ -1,0 +1,5 @@
+operation_hours.settings:
+  title: 'Operation Hours configuration'
+  base_route_name: operation_hours.hours.settings
+  names:
+    - operation_hours.settings

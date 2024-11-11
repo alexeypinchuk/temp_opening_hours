@@ -1,0 +1,125 @@
+title: 'Temporary closure'
+subtitle: 'Due to COVID-19'
+status: 'Opened'
+description:
+  format: 'standart'
+  value: '<p></p>'
+description_hidden:
+  format: 'standart'
+  value: '<p></p>'
+seasons:
+  summer:
+    begin: '04/21'
+    days:
+      monday:
+        from: ''
+        to: ''
+        closed: true
+      tuesday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+      wednesday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+      thursday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+      friday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+      saturday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+      sunday:
+        from: '10:00'
+        to: '18:00'
+        closed: false
+  winter:
+    begin: '10/21'
+    days:
+      monday:
+        from: ''
+        to: ''
+        closed: true
+      tuesday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+      wednesday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+      thursday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+      friday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+      saturday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+      sunday:
+        from: '10:00'
+        to: '17:00'
+        closed: false
+exceptions:
+  - status: 0
+    day: '17/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '25/12/2020'
+    from: '15:15'
+    to: ''
+  - status: 0
+    day: '18/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '19/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '20/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '21/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '22/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '23/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '24/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '25/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '26/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '27/05/2016'
+    from: ''
+    to: ''
+  - status: 0
+    day: '28/05/2016'
+    from: ''
+    to: ''

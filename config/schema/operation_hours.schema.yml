@@ -1,0 +1,95 @@
+operation_hours.settings:
+  type: config_entity
+  label: 'Operation hour'
+  mapping:
+    title:
+      type: text
+      label: 'Title'
+    subtitle:
+      type: text
+      label: 'Subtitle'
+    status:
+      type: text
+      label: 'Status'
+    description:
+      type: text_format
+      label: 'Description'
+    description_hidden:
+      type: text_format
+      label: 'Description Hidden'
+    seasons:
+      type: mapping
+      label: 'Seasons'
+      mapping:
+        summer:
+          type: operation_hours.season.summer
+          label: 'Summer'
+        winter:
+          type: operation_hours.season.winter
+          label: 'Winter'
+    exceptions:
+      type: sequence
+      label: 'Exceptions'
+      sequence:
+        type: operation_hours.exception.item
+
+operation_hours.season.*:
+  type: mapping
+  mapping:
+    begin:
+      type: string
+      label: 'Begin'
+    days:
+      type: mapping
+      label: 'Days'
+      mapping:
+        monday:
+          type: operation_hours.day.monday
+          label: 'Monday'
+        tuesday:
+          type: operation_hours.day.tuesday
+          label: 'Tuesday'
+        wednesday:
+          type: operation_hours.day.wednesday
+          label: 'Wednesday'
+        thursday:
+          type: operation_hours.day.thursday
+          label: 'Thursday'
+        friday:
+          type: operation_hours.day.friday
+          label: 'Friday'
+        saturday:
+          type: operation_hours.day.saturday
+          label: 'Saturday'
+        sunday:
+          type: operation_hours.day.sunday
+          label: 'Sunday'
+
+operation_hours.day.*:
+  type: mapping
+  mapping:
+    from:
+      type: string
+      label: 'From'
+    to:
+      type: string
+      label: 'To'
+    closed:
+      type: boolean
+      label: 'Closed all day'
+
+operation_hours.exception.item:
+  type: mapping
+  mapping:
+    status:
+      type: integer
+      label: 'Status'
+    day:
+      type: string
+      label: 'Day'
+    from:
+      type: string
+      label: 'From'
+    to:
+      type: string
+      label: 'To'

@@ -1,0 +1,5 @@
+operation_hours.settings:
+  title: 'Operation Hours'
+  parent: system.admin_config_system
+  description: 'Configure operation hours behavior to get actual operation time info.'
+  route_name: operation_hours.hours.settings
